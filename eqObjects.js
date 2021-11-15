@@ -28,7 +28,7 @@ eqObjects(ab, ba); // => true
 const abc = { a: "1", b: "2", c: "3" };
 eqObjects(ab, abc); // => false
 
-nction eqArrays(arr1, arr2) {
+function eqArrays(arr1, arr2) {
     if (arr1.length !== arr2.length) {
         return false;
     }
