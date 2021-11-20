@@ -1,20 +1,31 @@
 
 
-const assertEqual = function (actual, expected) {
 
-    if (actual === expected) {
-        console.log(`Assertion Passed:${actual} ===${expected}`);
+
+const words = ["ground", "control", "to", "major", "tom"];
+
+const map = function (array, callback) {
+    const results = [];
+    for (let item of array) {
+        results.push(callback(item));
+    }
+    return results;
+}
+
+const results1 = map(words, word => word[0]);
+console.log(results1);
+
+const assertArraysEqual = function (arr1, arr2) {
+
+    if (eqArrays(arr1, arr2)) {
+        console.log(`Assertion Passed: ${arr1}=== ${arr2}`);
         return true;
     }
     else {
-        console.log(`Assertion Failed:${actual} !== ${expected}`);
+        console.log(`Assertion Failed:${arr1} !== ${arr2}`);
         return false;
     }
 };
-//assertEqual(10, 10);
-//assertEqual(5, 10);
-
-// implement a function for Lotide that can easily compare two arrays and check if it's a perfect match.//
 
 function eqArrays(arr1, arr2) {
     if (arr1.length !== arr2.length) {
@@ -31,31 +42,7 @@ function eqArrays(arr1, arr2) {
     }
 }
 
-//assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true) // => true
-//assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false) // => false
 
-// Test 1
-
-const animals = ["dog", "cat", "girrafe", "elephant", "donkey"];
-const moreAnimals = animals.map(item => { return item[0] })
-console.log(moreAnimals);
-
-assertEqual(animals.map(item => { return item[0] }))
-//Test 2 
-
-const numbers = [1, 2, 3, 4, 5, 6, 7]
-const doubleNumbers = numbers.map(element => { return element * 2 })
-console.log(doubleNumbers);
-assertEqual(numbers.map(element => { return element * 2 }))
-// Test 3 
-
-let names = [
-    { name: "Eric" },
-    { name: "Teena" },
-    { name: "Lisa" },
-    { name: "Emma" },
-]
-
-let firstNames = names.map(function (x) { return x.name })
-console.log(firstNames);
-assertEqual(names.map(function (x) { return x.name })['Eric', 'Teena', 'Lisa', 'Emma'])
+assertArraysEqual(map(words, word => word[0]), ['g', 'c', 't', 'm', 't'])
+assertArraysEqual(map(words, word => word.length * 2), [6, 7, 2, 5, 3])
+assertArraysEqual(map(words, word => word[2]), ["O", "N", "", "J", "M"]);

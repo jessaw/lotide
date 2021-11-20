@@ -12,6 +12,10 @@ const assertEqual = function (actual, expected) {
 assertEqual(10, 10);
 assertEqual(5, 10);
 
+
+// implement a function for Lotide that can easily compare two arrays and check if it's a perfect match.//
+
+
 function eqArrays(arr1, arr2) {
     if (arr1.length !== arr2.length) {
         return false;
