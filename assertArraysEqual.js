@@ -1,6 +1,8 @@
+const eqArrays = require("./eqArrays");
+
 const assertArraysEqual = function (arr1, arr2) {
 
-    if (arr1 === arr2) {
+    if (eqArrays(arr1, arr2)) {
         console.log(`Assertion Passed:${arr1} ===${arr2}`);
         return true;
     }
@@ -9,5 +11,5 @@ const assertArraysEqual = function (arr1, arr2) {
         return false;
     }
 };
-assertArraysEqual(10, 10);
-assertArraysEqual(5, 10);
+assertArraysEqual(20, 20);
+assertArraysEqual(15, 30);
