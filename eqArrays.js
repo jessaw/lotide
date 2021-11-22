@@ -9,8 +9,8 @@ const assertEqual = function (actual, expected) {
         return false;
     }
 };
-assertEqual(10, 10);
-assertEqual(5, 10);
+//assertEqual(10, 10);
+//assertEqual(5, 10);
 
 
 // implement a function for Lotide that can easily compare two arrays and check if it's a perfect match.//
@@ -31,8 +31,10 @@ function eqArrays(arr1, arr2) {
     }
 }
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true) // => true
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false) // => false
+//assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true) // => true
+//assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false) // => false
 
 //eqArrays(["1", "2", "3"], ["1", "2", "3"]) // => true
 //eqArrays(["1", "2", "3"], ["1", "2", 3]) // => false
+
+module.exports = eqArrays;
