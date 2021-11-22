@@ -12,3 +12,5 @@ if (true) {
     let globalScope = 'Not anymore, you\'re not!';
 }
 console.log(globalScope);
+
+module.exports = head;
