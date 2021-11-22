@@ -9,6 +9,7 @@ const assertEqual = function (actual, expected) {
         return false;
     }
 };
-assertEqual(10, 10);
-assertEqual(5, 10);
+//assertEqual(10, 10);
+//assertEqual(5, 10);
 
+module.exports = assertEqual;

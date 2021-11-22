@@ -9,11 +9,10 @@ const assertEqual = function (actual, expected) {
         return false;
     }
 };
-//assertEqual(10, 10);
-//assertEqual(5, 10);
+
 
 const findKey = function (object, callback) {
-    for (key in object) {
+    for (key in object) {                          // used a for in loop; because this is an object
         //console.log(callback(object[key]))
         if (callback(object[key])) {
             return key;
