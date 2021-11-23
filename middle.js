@@ -1,4 +1,4 @@
-const assertArraysEqual = function (arr1, arr2) {
+/*const assertArraysEqual = function (arr1, arr2) {
 
     if (arr1 === arr2) {
         console.log(`Assertion Passed:${arr1} ===${arr2}`);
@@ -9,8 +9,8 @@ const assertArraysEqual = function (arr1, arr2) {
         return false;
     }
 };
-assertArraysEqual(10, 10);
-assertArraysEqual(5, 10);
+//assertArraysEqual(10, 10);
+//assertArraysEqual(5, 10);
 
 function eqArrays(arr1, arr2) {
     if (arr1.length !== arr2.length) {
@@ -25,16 +25,27 @@ function eqArrays(arr1, arr2) {
         }
         return true;
     }
-}
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true) // => true
-assertArraysEqual(eqArrays([1, 2, 3], [3, 2, 1]), false) // => fals
+}*/
+//assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true) // => true
+//assertArraysEqual(eqArrays([1, 2, 3], [3, 2, 1]), false) // => false
 
 
-function middle(array) {
-    console.log(Math.round((array.length / 2)));
-}
+const middle = function (array) {
+    if (array.length <= 2) {
+        return [];
+    } else if (array.length % 2 === 0) {
+        return [array[Math.floor(array.length / 2)], array[Math.floor(array.length / 2) - 1]]
+    } else {
+        return [array[Math.floor(array.length / 2)]];
+    }
+
+};
+
+
 
 middle([1]) // => []
 middle([1, 2]) // => []
 middle([1, 2, 3]) // => [2]
 middle([1, 2, 3, 4, 5]) // => [3]
+
+console.log(middle([1]));
