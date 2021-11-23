@@ -32,11 +32,11 @@ function eqArrays(arr1, arr2) {
 
 const middle = function (array) {
     if (array.length <= 2) {
-        return [];
-    } else if (array.length % 2 === 0) {
-        return [array[Math.floor(array.length / 2)], array[Math.floor(array.length / 2) - 1]]
+        return [];// if length or array is less than or equal to 2. Return empty array 
+    } else if (array.length % 2 === 0) { // if array is even, return 2 middle indices of the array
+        return [array[Math.floor(array.length / 2) - 1], array[Math.floor(array.length / 2)]]
     } else {
-        return [array[Math.floor(array.length / 2)]];
+        return [array[Math.floor(array.length / 2)]]; // if array is odd, return the middle index
     }
 
 };
@@ -48,4 +48,4 @@ middle([1, 2]) // => []
 middle([1, 2, 3]) // => [2]
 middle([1, 2, 3, 4, 5]) // => [3]
 
-console.log(middle([1]));
+console.log(middle([1, 2]));

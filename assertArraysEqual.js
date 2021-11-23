@@ -11,5 +11,7 @@ const assertArraysEqual = function (arr1, arr2) {
         return false;
     }
 };
-assertArraysEqual(20, 20);
+//assertArraysEqual(20, 20);//
 assertArraysEqual(15, 30);
+
+module.exports = assertArraysEqual;
