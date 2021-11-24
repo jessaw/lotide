@@ -1,26 +1,16 @@
-const assertArraysEqual = require('../assertArraysEqual');
 
+const assert = require('chai').assert;
+const middle = require('../middle');
 
-const middle = function (array) {
-    if (array.length <= 2) {
-        return [];// if length or array is less than or equal to 2. Return empty array 
-    } else if (array.length % 2 === 0) { // if array is even, return 2 middle indices of the array
-        return [array[Math.floor(array.length / 2) - 1], array[Math.floor(array.length / 2)]]
-    } else {
-        return [array[Math.floor(array.length / 2)]]; // if array is odd, return the middle index
-    }
+describe('#middle', () => {
+    it('should return [] for [1])', () => {
+        assert.deepEqual(middle([1]), []);
+    });
+    it('should return [2] for [1,2,3]', () => {
+        assert.deepEqual(middle([1, 2, 3]), [2]);
+    });
+    it('shoudl return [3] for [1,2,3,4,5]', () => {
+        assert.deepEqual(middle([1, 2, 3, 4, 5]), [3]);
+    })
+});
 
-};
-
-
-
-middle([1]) // => []
-middle([1, 2]) // => []
-middle([1, 2, 3]) // => [2]
-middle([1, 2, 3, 4, 5]) // => [3]
-
-assertArraysEqual(20, 20);
-assertArraysEqual("dog", "cat");
-
-console.log(middle([1, 2]));
-console.log(middle([1, 2, 3, 4, 5, 6, 7]));
